@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Walking Skeleton Login</title>
+</head>
+<body>
+
+    <h2>Login Form</h2>
+
+    <form id="loginForm">
+        <label for="username">Username:</label>
+        <input type="text" id="username">
+
+        <br><br>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password">
+
+        <br><br>
+
+        <button type="submit">Login</button>
+    </form>
+
+    <p id="result"></p>
+
+    <script>
+        document.getElementById("loginForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            const user = document.getElementById("username").value;
+            const pass = document.getElementById("password").value;
+
+            if (user === "admin" && pass === "123") {
+                document.getElementById("result").innerText = "Login successful!";
+            } else {
+                document.getElementById("result").innerText = "Login failed!";
+            }
+        });
+    </script>
+
+</body>
+</html>
